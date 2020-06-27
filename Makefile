@@ -8,6 +8,8 @@ build-ServiceApiFunction:
 	# Note: We do the inverse of this operation in bootstrap.
 	
 	# zip lambda.zip -x '.deno_dir/gen/file/*' -r .deno_dir handler.ts  # other source files
+	mkdir $(ARTIFACTS_DIR)/bin
+	cp /usr/local/bin/deno $(ARTIFACTS_DIR)/bin
 	cp -R .deno_dir/gen/file/*  $(ARTIFACTS_DIR)
 	# cp -R .deno_dir/gen/file/*  $(ARTIFACTS_DIR)
 	cp bootstrap $(ARTIFACTS_DIR)
